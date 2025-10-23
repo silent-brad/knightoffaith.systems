@@ -1,0 +1,640 @@
+code, pre {
+  padding: 7px;
+  font-size: 0.9em;
+  font-family: 'Fira Code', Consolas, Monaco, Menlo, "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace;
+  background: #f8f5ec;
+}
+code {
+  padding: 3px 5px;
+  border-radius: 4px;
+  color: #c7254e;
+}
+pre > code {
+	 display: block;
+}
+
+.js {
+  @apply language-javascript;
+}
+.rust {
+  @apply language-rust;
+}
+
+figure.highlight {
+  margin: 1em 0;
+  border-radius: 5px;
+  overflow-x: auto;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.125);
+	position: relative;
+  
+  & .highlight table {
+    position: relative;
+  }
+
+  & table::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    padding: 2px 7px;
+    font-size: 0.9em;
+    font-weight: bold;
+    color: #b1b1b1;
+    background: #f4efe1;
+    content: 'Code';
+  }
+
+  &.language-bash > table::after {
+    content: "Bash";
+  }
+  figure.highlight.language-c > table::after {
+    content: "C";
+  }
+  figure.highlight.language-cs > table::after {
+    content: "C#";
+  }
+  figure.highlight.language-cpp > table::after {
+    content: "C++";
+  }
+  figure.highlight.language-css > table::after {
+    content: "CSS";
+  }
+  figure.highlight.language-coffeescript > table::after {
+    content: "CoffeeScript";
+  }
+  figure.highlight.language-html > table::after {
+    content: "HTML";
+  }
+  figure.highlight.language-xml > table::after {
+    content: "XML";
+  }
+  figure.highlight.language-http > table::after {
+    content: "HTTP";
+  }
+  figure.highlight.language-json > table::after {
+    content: "JSON";
+  }
+  figure.highlight.language-java > table::after {
+    content: "Java";
+  }
+  figure.highlight.language-js > table::after {
+    content: "JavaScript";
+  }
+  figure.highlight.language-javascript > table::after {
+    content: "JavaScript";
+  }
+  figure.highlight.language-makefile > table::after {
+    content: "Makefile";
+  }
+  figure.highlight.language-markdown > table::after {
+    content: "Markdown";
+  }
+  figure.highlight.language-objectivec > table::after {
+    content: "Objective-C";
+  }
+  figure.highlight.language-php > table::after {
+    content: "PHP";
+  }
+  figure.highlight.language-perl > table::after {
+    content: "Perl";
+  }
+  figure.highlight.language-python > table::after {
+    content: "Python";
+  }
+  figure.highlight.language-ruby > table::after {
+    content: "Ruby";
+  }
+  figure.highlight.language-sql > table::after {
+    content: "SQL";
+  }
+  figure.highlight.language-shell > table::after {
+    content: "Shell";
+  }
+  figure.highlight.language-erlang > table::after {
+    content: "Erlang";
+  }
+  figure.highlight.language-go > table::after {
+    content: "Go";
+  }
+  figure.highlight.language-go-html-template > table::after {
+    content: "Go HTML Template";
+  }
+  figure.highlight.language-groovy > table::after {
+    content: "Groovy";
+  }
+  figure.highlight.language-haskell > table::after {
+    content: "Haskell";
+  }
+  figure.highlight.language-kotlin > table::after {
+    content: "Kotlin";
+  }
+  figure.highlight.language-clojure > table::after {
+    content: "Clojure";
+  }
+  figure.highlight.language-less > table::after {
+    content: "Less";
+  }
+  figure.highlight.language-lisp > table::after {
+    content: "Lisp";
+  }
+  figure.highlight.language-lua > table::after {
+    content: "Lua";
+  }
+  figure.highlight.language-matlab > table::after {
+    content: "Matlab";
+  }
+  figure.highlight.language-rust > table::after {
+    content: "Rust";
+  }
+  figure.highlight.language-scss > table::after {
+    content: "Scss";
+  }
+  figure.highlight.language-scala > table::after {
+    content: "Scala";
+  }
+  figure.highlight.language-swift > table::after {
+    content: "Swift";
+  }
+  figure.highlight.language-typescript > table::after {
+    content: "TypeScript";
+  }
+  figure.highlight.language-yml > table::after {
+    content: "YAML";
+  }
+  figure.highlight.language-yaml > table::after {
+    content: "YAML";
+  }
+  figure.highlight.language-toml > table::after {
+    content: "TOML";
+  }
+  figure.highlight.language-diff > table::after {
+    content: "Diff";
+  }
+  & .code pre {
+    margin: 0;
+    padding: 30px 10px 10px;
+  }
+  & .gutter {
+    width: 10px;
+    color: #cacaca;
+  }
+  & .gutter pre {
+    margin: 0;
+    padding: 30px 7px 10px;
+  }
+  & .line {
+    height: 1em;
+  }
+  & table, & tr, & td {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    border-collapse: collapse;
+  }
+  & .code .hljs-comment, & .code .hljs-quote {
+    color: #93a1a1;
+  }
+  & .code .hljs-keyword, & .code .hljs-selector-tag, & .code .hljs-addition {
+    color: #859900;
+  }
+  &  .code .hljs-number, &  .code .hljs-string, &  .code .hljs-meta .hljs-meta-string, &  .code .hljs-literal, &  .code .hljs-doctag, &  .code .hljs-regexp {
+    color: #2aa198;
+  }
+  &  .code .hljs-title, &  .code .hljs-section, &  .code .hljs-name, &  .code .hljs-selector-id, &  .code .hljs-selector-class {
+    color: #268bd2;
+  }
+  &  .code .hljs-attribute, &  .code .hljs-attr, &  .code .hljs-variable, &  .code .hljs-template-variable, &  .code .hljs-class .hljs-title, &  .code .hljs-type {
+    color: #b58900;
+  }
+  &  .code .hljs-symbol, &  .code .hljs-bullet, &  .code .hljs-subst, &  .code .hljs-meta, &  .code .hljs-meta .hljs-keyword, &  .code .hljs-selector-attr, &  .code .hljs-selector-pseudo, &  .code .hljs-link {
+    color: #cb4b16;
+  }
+  &  .code .hljs-built_in, &  .code .hljs-deletion {
+    color: #dc322f;
+  }
+  &  .code .hljs-formula {
+    background: #eee8d5;
+  }
+  &  .code .hljs-emphasis {
+    font-style: italic;
+  }
+  &  .code .hljs-strong {
+    font-weight: bold;
+  }
+}
+.highlight {
+  & > .chroma {
+    margin: 1em 0;
+    border-radius: 5px;
+    overflow-x: auto;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.125);
+    position: relative;
+    background: #f8f5ec;
+  }
+  & > .chroma code {
+    padding: 0;
+  }
+  & > .chroma table {
+    position: relative;
+  }
+  & > .chroma table::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    padding: 2px 7px;
+    font-size: 0.9em;
+    font-weight: bold;
+    color: #b1b1b1;
+    background: #f4efe1;
+    content: 'Code';
+  }
+  & > .chroma.language-elixir > table::after {
+    content: "Epos";
+  }
+  & > .chroma.language-bash > table::after {
+    content: "Bash";
+  }
+ /*.highlight > .chroma.language-c > table::after {
+	 content: "C";
+}
+ .highlight > .chroma.language-cs > table::after {
+	 content: "C#";
+}
+ .highlight > .chroma.language-cpp > table::after {
+	 content: "C++";
+}
+ .highlight > .chroma.language-css > table::after {
+	 content: "CSS";
+}
+ .highlight > .chroma.language-coffeescript > table::after {
+	 content: "CoffeeScript";
+}
+ .highlight > .chroma.language-html > table::after {
+	 content: "HTML";
+}
+ .highlight > .chroma.language-xml > table::after {
+	 content: "XML";
+}
+ .highlight > .chroma.language-http > table::after {
+	 content: "HTTP";
+}
+ .highlight > .chroma.language-json > table::after {
+	 content: "JSON";
+}
+ .highlight > .chroma.language-java > table::after {
+	 content: "Java";
+}
+ .highlight > .chroma.language-js > table::after {
+	 content: "JavaScript";
+}
+ .highlight > .chroma.language-javascript > table::after {
+	 content: "JavaScript";
+}
+ .highlight > .chroma.language-makefile > table::after {
+	 content: "Makefile";
+}
+ .highlight > .chroma.language-markdown > table::after {
+	 content: "Markdown";
+}
+ .highlight > .chroma.language-objectivec > table::after {
+	 content: "Objective-C";
+}
+ .highlight > .chroma.language-php > table::after {
+	 content: "PHP";
+}
+ .highlight > .chroma.language-perl > table::after {
+	 content: "Perl";
+}
+ .highlight > .chroma.language-python > table::after {
+	 content: "Python";
+}
+ .highlight > .chroma.language-ruby > table::after {
+	 content: "Ruby";
+}
+ .highlight > .chroma.language-sql > table::after {
+	 content: "SQL";
+}
+ .highlight > .chroma.language-shell > table::after {
+	 content: "Shell";
+}
+ .highlight > .chroma.language-erlang > table::after {
+	 content: "Erlang";
+}
+ .highlight > .chroma.language-go > table::after {
+	 content: "Go";
+}
+ .highlight > .chroma.language-go-html-template > table::after {
+	 content: "Go HTML Template";
+}
+ .highlight > .chroma.language-groovy > table::after {
+	 content: "Groovy";
+}
+ .highlight > .chroma.language-haskell > table::after {
+	 content: "Haskell";
+}
+ .highlight > .chroma.language-kotlin > table::after {
+	 content: "Kotlin";
+}
+ .highlight > .chroma.language-clojure > table::after {
+	 content: "Clojure";
+}
+ .highlight > .chroma.language-less > table::after {
+	 content: "Less";
+}
+ .highlight > .chroma.language-lisp > table::after {
+	 content: "Lisp";
+}
+ .highlight > .chroma.language-lua > table::after {
+	 content: "Lua";
+}
+ .highlight > .chroma.language-matlab > table::after {
+	 content: "Matlab";
+}
+ .highlight > .chroma.language-rust > table::after {
+	 content: "Rust";
+}
+ .highlight > .chroma.language-scss > table::after {
+	 content: "Scss";
+}
+ .highlight > .chroma.language-scala > table::after {
+	 content: "Scala";
+}
+ .highlight > .chroma.language-swift > table::after {
+	 content: "Swift";
+}
+ .highlight > .chroma.language-typescript > table::after {
+	 content: "TypeScript";
+}
+ .highlight > .chroma.language-yml > table::after {
+	 content: "YAML";
+}
+ .highlight > .chroma.language-yaml > table::after {
+	 content: "YAML";
+}
+ .highlight > .chroma.language-toml > table::after {
+	 content: "TOML";
+}
+ .highlight > .chroma.language-diff > table::after {
+	 content: "Diff";
+}*/
+  & > .chroma .lntd {
+    line-height: 1em;
+  }
+  & > .chroma .lntd:first-child {
+    width: 10px;
+  }
+  & > .chroma .lntd:first-child pre {
+    margin: 0;
+    padding: 30px 7px 10px;
+  }
+  & > .chroma .lntd:last-child {
+    vertical-align: top;
+  }
+  & > .chroma .lntd:last-child pre {
+    margin: 0;
+    padding: 30px 10px 10px;
+  }
+  & > .chroma table, & > .chroma tr, & > .chroma td {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    border-collapse: collapse;
+  }
+  & > .chroma .1st {
+    color: #cacaca;
+  }
+  & > .chroma .hl {
+    display: block;
+    width: 100%;
+    background-color: #ffc;
+  }
+  & > .chroma .k {
+    color: #859900;
+  }
+  & > .chroma .kc {
+    color: #859900;
+    font-weight: bold;
+  }
+  & > .chroma .kd {
+    color: #859900;
+  }
+  & > .chroma .kn {
+    color: #dc322f;
+    font-weight: bold;
+  }
+  & > .chroma .kp {
+    color: #859900;
+  }
+  & > .chroma .kr {
+    color: #859900;
+  }
+  & > .chroma .kt {
+    color: #859900;
+    font-weight: bold;
+  }
+  & > .chroma .n {
+    color: #268bd2;
+  }
+  & > .chroma .na {
+    color: #268bd2;
+  }
+  & > .chroma .nb {
+    color: #cb4b16;
+  }
+  & > .chroma .bp {
+    color: #268bd2;
+  }
+  & > .chroma .nc {
+    color: #cb4b16;
+  }
+  & > .chroma .no {
+    color: #268bd2;
+  }
+  & > .chroma .nd {
+    color: #268bd2;
+  }
+  & > .chroma .ni {
+    color: #268bd2;
+  }
+  & > .chroma .ne {
+    color: #268bd2;
+  }
+  & > .chroma .nf {
+    color: #268bd2;
+  }
+  & > .chroma .fm {
+    color: #268bd2;
+  }
+  & > .chroma .nl {
+    color: #268bd2;
+  }
+  & > .chroma .nn {
+    color: #268bd2;
+  }
+  & > .chroma .nx {
+    color: #268bd2;
+  }
+  & > .chroma .py {
+    color: #268bd2;
+  }
+  & > .chroma .nt {
+    color: #268bd2;
+    font-weight: bold;
+  }
+  & > .chroma .nv {
+    color: #268bd2;
+  }
+  & > .chroma .vc {
+    color: #268bd2;
+  }
+  & > .chroma .vg {
+    color: #268bd2;
+  }
+  & > .chroma .vi {
+    color: #268bd2;
+  }
+  & > .chroma .vm {
+    color: #268bd2;
+  }
+  & > .chroma .l {
+    color: #2aa198;
+  }
+  & > .chroma .ld {
+    color: #2aa198;
+  }
+  & > .chroma .s {
+    color: #2aa198;
+  }
+  & > .chroma .sa {
+    color: #2aa198;
+  }
+  & > .chroma .sb {
+    color: #2aa198;
+  }
+  & > .chroma .sc {
+    color: #2aa198;
+  }
+  & > .chroma .dl {
+    color: #2aa198;
+  }
+  & > .chroma .sd {
+    color: #2aa198;
+  }
+  & > .chroma .s2 {
+    color: #2aa198;
+  }
+  & > .chroma .se {
+    color: #2aa198;
+  }
+  & > .chroma .sh {
+    color: #2aa198;
+  }
+  & > .chroma .si {
+    color: #2aa198;
+  }
+  & > .chroma .sx {
+    color: #2aa198;
+  }
+  & > .chroma .sr {
+    color: #2aa198;
+  }
+  & > .chroma .s1 {
+    color: #2aa198;
+  }
+  & > .chroma .ss {
+    color: #2aa198;
+  }
+  & > .chroma .m {
+    color: #2aa198;
+    font-weight: bold;
+  }
+  & > .chroma .mb {
+    color: #2aa198;
+    font-weight: bold;
+  }
+  & > .chroma .mf {
+    color: #2aa198;
+    font-weight: bold;
+  }
+  & > .chroma .mh {
+    color: #2aa198;
+    font-weight: bold;
+  }
+  & > .chroma .mi {
+    color: #2aa198;
+    font-weight: bold;
+  }
+  & > .chroma .il {
+    color: #2aa198;
+    font-weight: bold;
+  }
+  & > .chroma .mo {
+    color: #2aa198;
+    font-weight: bold;
+  }
+  & > .chroma .ow {
+    color: #859900;
+  }
+  & > .chroma .c {
+    color: #93a1a1;
+    font-style: italic;
+  }
+  & > .chroma .ch {
+    color: #93a1a1;
+    font-style: italic;
+  }
+  & > .chroma .cm {
+    color: #93a1a1;
+    font-style: italic;
+  }
+  & > .chroma .c1 {
+    color: #93a1a1;
+    font-style: italic;
+  }
+  & > .chroma .cs {
+    color: #93a1a1;
+    font-style: italic;
+  }
+  & > .chroma .cp {
+    color: #93a1a1;
+    font-style: italic;
+  }
+  & > .chroma .cpf {
+    color: #93a1a1;
+    font-style: italic;
+  }
+  & > .chroma .g {
+    color: #d33682;
+  }
+  & > .chroma .gd {
+    color: #b58900;
+  }
+  & > .chroma .ge {
+    color: #d33682;
+  }
+  & > .chroma .gr {
+    color: #d33682;
+  }
+  & > .chroma .gh {
+    color: #d33682;
+  }
+  & > .chroma .gi {
+    color: #859900;
+  }
+  & > .chroma .go {
+    color: #d33682;
+  }
+  & > .chroma .gp {
+    color: #d33682;
+  }
+  & > .chroma .gs {
+    color: #d33682;
+  }
+  & > .chroma .gu {
+    color: #d33682;
+  }
+  & > .chroma .gt {
+    color: #d33682;
+  } 
+}

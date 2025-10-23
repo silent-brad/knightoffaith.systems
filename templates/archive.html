@@ -1,0 +1,13 @@
+<h1>All Posts</h1>
+
+$if(posts)$
+<ul>
+    $for(posts)$
+    <li>
+        <a href="$url$">$title$</a> - <time>$date$</time>
+    </li>
+    $endfor$
+</ul>
+$else$
+<p>No posts yet.</p>
+$endif$

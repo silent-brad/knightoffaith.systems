@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  src: url('/fonts/chancery/apple-chancery-webfont.ttf');
+  font-family: 'Chancery';
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Athelas';
+  src: url('/fonts/athelas/Athelas-Regular.ttf');
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'Athelas Bold';
+  src: url('/fonts/athelas/Athelas-Bold.ttf');
+  font-weight: 700;
+}
+@font-face {
+  font-family: 'Athelas Italic';
+  src: url('/fonts/athelas/Athelas-Italic.ttf');
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'Athelas Bold Italic';
+  src: url('/fonts/athelas/Athelas-BoldItalic.ttf');
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Junicode';
+  src: url('/fonts/junicode/Junicode.ttf');
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'Junicode Bold';
+  src: url('/fonts/junicode/Junicode-Bold.ttf');
+  font-weight: 700;
+}
+@font-face {
+  font-family: 'Junicode Italic';
+  src: url('/fonts/junicode/Junicode-Italic.ttf');
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'Junicode Bold Italic';
+  src: url('/fonts/junicode/Junicode-BoldItalic.ttf');
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Fira Code';
+  src: url('/fonts/firacode/static/FiraCode-Regular.ttf');
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  font-family: 'Athelas', serif;
+}
+
+h1 {
+  font-family: 'Chancery', cursive;
+}
+
+/* Custom styles for TailwindCSS */
+.tag {
+  @apply inline-block px-2 py-1 text-sm bg-gray-200 text-gray-700 rounded-full mr-1 mb-1 no-underline;
+}
+
+.tag:hover {
+  @apply bg-gray-300;
+}
+
+/* Code highlighting */
+pre {
+  @apply overflow-x-auto;
+}
+
+/* Typography enhancements */
+.prose {
+  @apply max-w-none;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .tag {
+    @apply bg-gray-700 text-gray-200;
+  }
+  
+  .tag:hover {
+    @apply bg-gray-600;
+  }
+}

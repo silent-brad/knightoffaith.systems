@@ -1,0 +1,41 @@
+---
+title: Home
+---
+
+<hgroup>
+    <h1>Knight of Faith Systems</h1>
+    <p>....</p>
+</hgroup>
+
+<section>
+    <h2>Latest Posts</h2>
+    
+    $if(posts)$
+    $for(posts)$
+    <article>
+        <header>
+            <h3><a href="$url$">$title$</a></h3>
+            <p><time>$date$</time></p>
+        </header>
+        <p>$if(description)$$description$$endif$</p>
+        <footer>
+            <a href="$url$" role="button">Read more</a>
+        </footer>
+    </article>
+    $endfor$
+    $else$
+    <p>No posts yet. Check back soon!</p>
+    $endif$
+</section>
+
+<section>
+    <h2>About This Site</h2>
+    <p>
+        This blog is built with <a href="https://jaspervdj.be/hakyll/">Hakyll</a>, 
+        a static site generator written in Haskell. Blog posts are written in 
+        <a href="https://typst.app/">Typst</a>, a modern markup language for document preparation.
+    </p>
+    <p>
+        <a href="/about.html" role="button" class="secondary">Learn more about me</a>
+    </p>
+</section>

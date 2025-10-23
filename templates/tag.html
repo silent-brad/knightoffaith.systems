@@ -1,0 +1,15 @@
+<h1>$title$</h1>
+
+$if(posts)$
+<ul>
+    $for(posts)$
+    <li>
+        <a href="$url$">$title$</a> - <time>$date$</time>
+    </li>
+    $endfor$
+</ul>
+$else$
+<p>No posts with this tag.</p>
+$endif$
+
+<p><a href="/archive.html">← Back to all posts</a></p>
