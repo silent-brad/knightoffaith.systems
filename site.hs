@@ -12,6 +12,10 @@ import           Data.Maybe (fromMaybe)
 import           Data.Time.Clock (UTCTime)
 import           Data.Time.Format (parseTimeM, defaultTimeLocale)
 import           Data.Ord (Down(..), comparing)
+import           Text.Blaze.Html (toHtml, toValue, (!))
+import           Text.Blaze.Html.Renderer.String (renderHtml)
+import qualified Text.Blaze.Html5 as H
+import qualified Text.Blaze.Html5.Attributes as A
 
 --------------------------------------------------------------------------------
 -- Configuration
@@ -195,8 +199,29 @@ main = hakyllWith config $ do
             >>= loadAndApplyTemplate "templates/default.html" defaultContext
             >>= relativizeUrls
 
+    -- Atom feed
+    create ["feed.atom"] $ do
+        route idRoute
+        compile $ do
+            posts <- recentFirstFromMetadata =<< loadAll "posts/*.typ"
+            let feedCtx = postCtx `mappend` bodyField "description"
+            renderAtom feedConfiguration feedCtx posts
+
     -- Templates
     match "templates/*" $ compile templateBodyCompiler
+
+--------------------------------------------------------------------------------
+-- Feed Configuration
+--------------------------------------------------------------------------------
+
+feedConfiguration :: FeedConfiguration
+feedConfiguration = FeedConfiguration
+    { feedTitle       = "Knight of Faith"
+    , feedDescription = "Notes of a knight of faith"
+    , feedAuthorName  = "Brad White"
+    , feedAuthorEmail = "brad@knightoffaith.systems"
+    , feedRoot        = "https://knightoffaith.systems"
+    }
 
 --------------------------------------------------------------------------------
 -- Contexts
@@ -206,6 +231,15 @@ postCtx :: Context String
 postCtx =
     dateFieldFromMetadata "date" "%B %e, %Y" `mappend`
     utcDateFieldFromMetadata `mappend`
+    field "updated" (\item -> do
+        let identifier = itemIdentifier item
+            metaPath = replaceExtension (toFilePath identifier) "meta"
+        metaItem <- load (fromFilePath metaPath)
+        let metaContent = itemBody metaItem
+            metaMap = parseMetadata metaContent
+        case M.lookup "date" metaMap of
+            Just dateStr -> return $ dateStr ++ "T00:00:00Z"
+            Nothing -> return "1900-01-01T00:00:00Z") `mappend`
     tagsFieldFromMetadata `mappend`
     defaultContext
 
