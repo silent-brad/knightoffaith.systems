@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>code-example — Knight of Faith Systems</title>
+
+  <!-- Atom feed -->
+  <link href="./feed.atom" type="application/atom+xml" rel="alternate" title="Knight of Faith Systems Atom Feed" />
+
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/site.css">
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/highlighter.css" />
+  
+  <!-- Font preloads -->
+  <link rel="preload" href="./fonts/chancery/apple-chancery-webfont.ttf" as="font" type="font/ttf" crossorigin />
+
+  <link rel="preload" href="./fonts/athelas/Athelas-Regular.ttf" as="font" type="font/ttf" crossorigin />
+  <link rel="preload" href="./fonts/athelas/Athelas-Bold.ttf" as="font" type="font/ttf" crossorigin />
+  <link rel="preload" href="./fonts/athelas/Athelas-Italic.ttf" as="font" type="font/ttf" crossorigin />
+  <link rel="preload" href="./fonts/athelas/Athelas-BoldItalic.ttf" as="font" type="font/ttf" crossorigin />
+
+  <link rel="preload" href="./fonts/firacode/static/FiraCode-Regular.ttf" as="font" type="font/ttf" crossorigin />
+
+</head>
+<body>
+  <main class="container">
+    <nav>
+      <ul>
+        <li><strong><a href="./">Knight of Faith Systems</a></strong></li>
+      </ul>
+      <ul>
+        <li><a href="./archive.html">Archive</a></li>
+        <li><a href="./about.html">About</a></li>
+        <li><a href="./reading-list.html">Reading List</a></li>
+      </ul>
+    </nav>
+
+    <article>
+      
+      <header>
+        <h1>code-example</h1>
+        
+        <p><time>January 16, 2024</time></p>
+        
+      </header>
+      
+      
+      <article>
+    <header>
+        
+        <time>Published on January 16, 2024</time>
+        
+        
+        <a href="./tags/javascript" class="tag"><kbd>#javascript</kbd></a> <a href="./tags/html" class="tag"><kbd>#html</kbd></a> <a href="./tags/css" class="tag"><kbd>#css</kbd></a> <a href="./tags/rust" class="tag"><kbd>#rust</kbd></a>
+        
+    </header>
+
+    <h1>Code Example</h1>
+<blockquote>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+voluptate velit esse cillum dolore eu fugiat</p>
+</blockquote>
+<p><a href="./code-example.pdf">Link to PDF of this page</a> <a href="./code-example.md">Link to Markdown of this page</a></p>
+<h2>This is a code example.</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">add</span>(a<span class="op">,</span> b) {</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> a <span class="op">+</span> b<span class="op">;</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<h2>And this is another code example.</h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode rs"><code class="sourceCode rust"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">fn</span> add(a<span class="op">:</span> <span class="dt">i32</span><span class="op">,</span> b<span class="op">:</span> <span class="dt">i32</span>) <span class="op">-&gt;</span> <span class="dt">i32</span> <span class="op">{</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  a <span class="op">+</span> b</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<h2>And some glorious Haskell code</h2>
+<div class="sourceCode" id="cb3"><pre class="sourceCode hs"><code class="sourceCode haskell"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ot">add ::</span> <span class="dt">Int</span> <span class="ot">-&gt;</span> <span class="dt">Int</span> <span class="ot">-&gt;</span> <span class="dt">Int</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>add a b <span class="ot">=</span> a <span class="op">+</span> b</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="ot">myMap ::</span> [a] <span class="ot">-&gt;</span> (a <span class="ot">-&gt;</span> b) <span class="ot">-&gt;</span> [b]</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>myMap [] _ <span class="ot">=</span> []</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>myMap x<span class="op">:</span>xs fn <span class="ot">=</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  fn x<span class="op">:</span>myMap xs fn</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="ot">fib ::</span> <span class="dt">Int</span> <span class="ot">-&gt;</span> <span class="dt">Int</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>fib <span class="dv">0</span> <span class="ot">=</span> <span class="dv">0</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>fib <span class="dv">1</span> <span class="ot">=</span> <span class="dv">1</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>fib x <span class="ot">=</span> fib (x <span class="op">-</span> <span class="dv">1</span>) <span class="op">+</span> fib (x <span class="op">-</span> <span class="dv">2</span>)</span></code></pre></div>
+<h2>More examples</h2>
+<h3>Lua</h3>
+<div class="sourceCode" id="cb4"><pre class="sourceCode lua"><code class="sourceCode lua"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> fib<span class="op">(</span><span class="va">num</span><span class="op">)</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> <span class="va">num</span> <span class="op">&lt;</span> <span class="dv">2</span> <span class="cf">then</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">1</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">else</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> fib<span class="op">(</span><span class="va">x</span> <span class="op">-</span> <span class="dv">1</span><span class="op">)</span> <span class="op">+</span> fib<span class="op">(</span><span class="va">x</span> <span class="op">-</span> <span class="dv">2</span><span class="op">)</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="cf">end</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code></pre></div>
+<h3>Elixir</h3>
+<div class="sourceCode" id="cb5"><pre class="sourceCode elixir"><code class="sourceCode elixir"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fib<span class="fu">(</span>x<span class="fu">)</span> <span class="kw">when</span> x <span class="op">&lt;</span> <span class="dv">2</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  return x</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fib<span class="fu">(</span>x<span class="fu">)</span> <span class="kw">when</span> x <span class="op">&gt;=</span> <span class="dv">2</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  return fib<span class="fu">(</span>x <span class="op">-</span> <span class="dv">1</span><span class="fu">)</span> <span class="op">+</span> fib<span class="fu">(</span>x <span class="op">-</span> <span class="dv">2</span><span class="fu">)</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code></pre></div>
+<h3>Nim</h3>
+<div class="sourceCode" id="cb6"><pre class="sourceCode nim"><code class="sourceCode nim"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">func</span> <span class="st">fib</span><span class="kw">(</span>x<span class="kw">:</span> <span class="at">Int</span><span class="kw">):</span> <span class="at">Int</span> <span class="co">=</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">case</span> x</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="co">of</span> <span class="dv">0</span><span class="kw">:</span> <span class="dv">0</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    <span class="co">of</span> <span class="dv">1</span><span class="kw">:</span> <span class="dv">1</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span><span class="kw">:</span> <span class="fu">fib</span><span class="kw">(</span>x <span class="co">-</span> <span class="dv">1</span><span class="kw">)</span> <span class="co">+</span> <span class="fu">fib</span><span class="kw">(</span>x <span class="co">-</span> <span class="dv">2</span><span class="kw">)</span></span></code></pre></div>
+<h3>Go</h3>
+<div class="sourceCode" id="cb7"><pre class="sourceCode go"><code class="sourceCode go"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">func</span> fib<span class="op">(</span>x <span class="dt">int</span><span class="op">)</span> <span class="dt">int</span> <span class="op">{</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> x <span class="op">&lt;</span> <span class="dv">2</span> <span class="op">{</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span> <span class="cf">else</span> <span class="op">{</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> fib<span class="op">(</span>x <span class="op">-</span> <span class="dv">1</span><span class="op">)</span> <span class="op">+</span> fib<span class="op">(</span>x <span class="op">-</span> <span class="dv">2</span><span class="op">)</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+
+</article>
+
+<hr>
+<p><a href="./archive.html">← Back to all posts</a></p>
+
+    </article>
+
+    <footer>
+      <hr>
+      <p>
+        Generated by <a href="http://jaspervdj.be/hakyll">Hakyll</a> •
+        Styled with <a href="https://tailwindcss.com">TailwindCSS</a>
+      </p>
+    </footer>
+  </main>
+</body>
+</html>

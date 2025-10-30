@@ -11,12 +11,8 @@
       let
         pkgs = nixpkgs.legacyPackages.${system};
 
-        haskellPackages = pkgs.haskellPackages.override {
-          overrides = final: prev:
-            {
-              # Add any Haskell package overrides here if needed
-            };
-        };
+        haskellPackages =
+          pkgs.haskellPackages.override { overrides = final: prev: { }; };
 
         # Site executable
         site = haskellPackages.callCabal2nix "knightoffaith" ./. { };
@@ -28,26 +24,36 @@
           haskellPackages.hakyll
           haskellPackages.haskell-language-server
           typst
-          tailwindcss
           pandoc
         ];
+
+        wrappedSite = pkgs.symlinkJoin {
+          name = "site";
+          paths = [ site ] ++ buildInputs;
+          buildInputs = [ pkgs.makeWrapper ];
+          postBuild = ''
+            wrapProgram $out/bin/site \
+              --prefix PATH : ${pkgs.lib.makeBinPath buildInputs} \
+              #--add-flags build help clean server watch \
+          '';
+        };
 
         # Site builder script
         buildSite = pkgs.writeShellScriptBin "build-site" ''
           echo "Building site..."
-          cabal run site build
+          ${pkgs.haskellPackages.cabal-install}/bin/cabal run site build
           echo "Site built successfully!"
         '';
 
         # Development server script
         serveSite = pkgs.writeShellScriptBin "serve-site" ''
           echo "Starting development server..."
-          cabal run site watch
+          ${pkgs.haskellPackages.cabal-install}/bin/cabal run site watch
         '';
 
       in {
         packages = {
-          default = site;
+          default = wrappedSite;
           build = buildSite;
           serve = serveSite;
         };

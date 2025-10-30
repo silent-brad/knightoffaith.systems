@@ -12,7 +12,7 @@ build-type:         Simple
 
 executable site
     main-is:            site.hs
-    build-depends:      
+    build-depends:
         base >= 4.16,
         hakyll >= 4.16,
         process >= 1.6,
