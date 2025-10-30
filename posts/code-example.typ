@@ -1,3 +1,6 @@
+#set text(font: "Athelas")
+#show heading.where(level: 1): set text(font: "Apple Chancery")
+
 #show raw: set text(font: "Fira Code")
 #show raw.where(block: true): set text(1em / 0.8)
 #set raw(theme: "rose-pine-moon.tmTheme")

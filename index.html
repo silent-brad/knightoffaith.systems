@@ -3,8 +3,7 @@ title: Home
 ---
 
 <hgroup>
-    <h1>Knight of Faith Systems</h1>
-    <p>....</p>
+    <p>Hero section here....</p>
 </hgroup>
 
 <section>
@@ -19,7 +18,7 @@ title: Home
         </header>
         <p>$if(description)$$description$$endif$</p>
         <footer>
-            <a href="$url$" role="button">Read more</a>
+          $if(tags)$$tags$$endif$
         </footer>
     </article>
     $endfor$

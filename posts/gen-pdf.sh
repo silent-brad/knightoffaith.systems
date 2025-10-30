@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
 filename=$(basename $1)
-typst compile $filename --font-path=../fonts/firacode/
+typst compile $filename --font-path=../fonts/firacode/ --font-path=../fonts/chancery --font-path=../fonts/athelas

@@ -6,10 +6,13 @@
 - [ ] Add Uses page
 - [x] Add CSS styling/remove Tailwind
 
+- [ ] Add PDF "book" of blog posts
+- [ ] Add dev icons to language tags
 - [ ] Make first letter of first paragraph big and in fancy font
 - [ ] Add time
-- [ ] Add TOC on left side
 - [ ] Add paragraph symbol (¶) which is a link to id
+- [ ] Add TOC for every title/subtitle
+- [ ] Add TOC on left side
 - [ ] Add fancy ending symbol (? §)
 
 
