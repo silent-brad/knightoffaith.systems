@@ -34,7 +34,6 @@
           postBuild = ''
             wrapProgram $out/bin/site \
               --prefix PATH : ${pkgs.lib.makeBinPath buildInputs} \
-              #--add-flags build help clean server watch \
           '';
         };
 
