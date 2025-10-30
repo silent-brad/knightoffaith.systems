@@ -2,9 +2,11 @@
 
 import           Data.Monoid (mappend)
 import           Hakyll
+import           Hakyll.Core.Compiler (unsafeCompiler)
 import           System.Process (readProcess)
 import           System.FilePath (replaceExtension, takeBaseName)
 import           Control.Monad (liftM, filterM, forM_)
+import           Text.Pandoc.Options (WriterOptions(..), HTMLMathMethod(..))
 import           Data.Map (Map)
 import qualified Data.Map as M
 import           Data.List (stripPrefix, sortBy, nub)
@@ -36,16 +38,16 @@ pandocTypstCompilerWithMeta :: Compiler (Item String)
 pandocTypstCompilerWithMeta = do
     body <- getResourceBody
     let content = itemBody body
-    -- Use pandoc to convert from Typst to HTML
+    -- Use pandoc to convert from Typst to HTML with code highlighting
     fp <- getResourceFilePath
     html <- unsafeCompiler $ do
-        readProcess "pandoc" ["-f", "typst", "-t", "html5", fp] ""
-    
+        readProcess "pandoc" ["-f", "typst", "-t", "html5", "--highlight-style=breezedark", fp] ""
+
     -- Load metadata from .meta file
     let metaPath = replaceExtension fp "meta"
     metaItem <- load (fromFilePath metaPath)
     let metaMap = parseMetadata (itemBody metaItem)
-    
+
     makeItemWithMetadata html metaMap
 
 parseMetadata :: String -> Map String String
@@ -193,7 +195,7 @@ main = hakyllWith config $ do
                 >>= relativizeUrls
 
     -- Static pages (About, Reading List)
-    match (fromList ["about.html", "reading-list.html"]) $ do
+    match (fromList ["about.html", "404.html", "reading-list.html"]) $ do
         route idRoute
         compile $ getResourceBody
             >>= loadAndApplyTemplate "templates/default.html" defaultContext
@@ -303,7 +305,6 @@ recentFirstFromMetadata items = do
                     Just utcTime -> return (utcTime, item)
                     Nothing -> return (defaultUTCTime, item)
             Nothing -> return (defaultUTCTime, item)
-    
 
 
 tagsFieldFromMetadata :: Context String
@@ -314,7 +315,7 @@ tagsFieldFromMetadata = field "tags" $ \item -> do
     let metaContent = itemBody metaItem
         metaMap = parseMetadata metaContent
     case M.lookup "tags" metaMap of
-        Just tagsStr -> return $ unwords $ map (\tag -> "<a href=\"/tags/" ++ makeUrl tag ++ "\" class=\"tag\">#" ++ tag ++ "</a>") (splitTags tagsStr)
+        Just tagsStr -> return $ unwords $ map (\tag -> "<a href=\"/tags/" ++ makeUrl tag ++ "\" class=\"tag\"><kbd>#" ++ tag ++ "</kbd></a>") (splitTags tagsStr)
         Nothing -> return ""
   where
     splitTags tagsStr = map trimSpaces' $ splitOn ',' tagsStr
